@@ -31,9 +31,10 @@ where
 // TODO: Add the appropriate trait bound.
 fn num_sq<T>(arg: &mut T) 
 where
-    T: AsMut<T> + std::ops::Mul<Output = T> + Copy, &mut T: Mul<&mut T, Output = T>
+    T: AsMut<u32>
 {
-    *arg = (*arg).as_mut() * (*arg).as_mut();
+    let value = arg.as_mut();
+    *value = *value * *value;
 }
 
 #[cfg(test)]

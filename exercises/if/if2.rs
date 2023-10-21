@@ -9,14 +9,6 @@
 pub fn foo_if_fizz(fizzish: &str) -> &str {
     if fizzish == "fizz" {
         "foo"
-<<<<<<< HEAD
-    } else {if fizzish =="fuzz"{
-        "bar"
-    }else{
-        "baz"
-    }
-=======
->>>>>>> 37f0b5e1946a150ff2e6619a262a7625ce81dedb
     }
      
     else if fizzish =="fuzz" {
