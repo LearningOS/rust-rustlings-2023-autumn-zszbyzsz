@@ -22,7 +22,6 @@
 // Execute `rustlings hint tests5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 /// # Safety
 ///
@@ -31,9 +30,13 @@ unsafe fn modify_by_address(address: usize) {
     // TODO: Fill your safety notice of the code block below to match your
     // code's behavior and the contract of this function. You may use the
     // comment of the test below as your format reference.
-    unsafe {
-        todo!("Your code goes here")
-    }
+    // unsafe {
+    //     todo!("Your code goes here")
+    // }
+    let value_ptr = address as *mut u32;
+    // *mut u32 is a pointer type in Rust. 
+    // It represents a mutable reference to a 32-bit unsigned integer (u32).
+    *value_ptr = 0xAABBCCDD;
 }
 
 #[cfg(test)]

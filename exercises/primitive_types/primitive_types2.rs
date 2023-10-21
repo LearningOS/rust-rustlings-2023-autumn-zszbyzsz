@@ -21,11 +21,7 @@ fn main() {
         println!("Neither alphabetic nor numeric!");
     }
 
-<<<<<<< HEAD
-    let your_character = 'D';// Finish this line like the example! What's your favorite character?
-=======
     let your_character = 'F'; // Finish this line like the example! What's your favorite character?
->>>>>>> 37f0b5e1946a150ff2e6619a262a7625ce81dedb
     // Try a letter, try a number, try a special character, try a character
     // from a different language than your own, try an emoji!
     if your_character.is_alphabetic() {

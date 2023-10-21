@@ -4,11 +4,7 @@
 // hint.
 
 
-<<<<<<< HEAD
-const NUMBER:u8 = 3;
-=======
 const NUMBER :i32 = 3;
->>>>>>> 37f0b5e1946a150ff2e6619a262a7625ce81dedb
 fn main() {
     println!("Number {}", NUMBER);
 }
