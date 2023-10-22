@@ -15,18 +15,20 @@ fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
         // multiplied by 2.
         *element = *element * 2;
     }
-    return v;
+    v
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
     
 }
 
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
-    v.iter().map(|element| {
-        // TODO: Do the same thing as above - but instead of mutating the
-        // Vec, you can just return the new number!
+    v.iter().map(|&element| element * 2).collect() // Use map to create a new Vec with elements multiplied by 2
 
-        element = &(element * 2);
-    }).collect()
+    // v.iter().map(|element| {
+    //     // TODO: Do the same thing as above - but instead of mutating the
+    //     // Vec, you can just return the new number!
+
+    //     element = &(element * 2);
+    // }).collect()
 }
 
 #[cfg(test)]

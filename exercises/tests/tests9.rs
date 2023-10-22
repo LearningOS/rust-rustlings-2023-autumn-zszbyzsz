@@ -39,6 +39,11 @@ mod foo {
     fn my_demo_function(a: u32) -> u32 {
         a
     }
+    // Add the extern attribute with "Rust" ABI to make the alias callable from outside.
+    #[no_mangle]
+    pub fn my_demo_function_alias(a: u32) -> u32 {
+        a
+    }
 }
 
 #[cfg(test)]

@@ -1,6 +1,6 @@
-//! This is the build script for both tests7 and tests8.
-//!
-//! You should modify this file to make both exercises pass.
+// // ! This is the build script for both tests7 and tests8.
+// // !
+// // ! You should modify this file to make both exercises pass.
 
 // fn main() {
 //     // In tests7, we should set up an environment variable
@@ -23,22 +23,33 @@
 //     println!("cargo:{}", your_command);
 // }
 
-
-#[warn(unused_imports)]
+// #[warn(unused_imports)]
 fn main() {
-    // In tests7, set up an environment variable called `TEST_FOO`.
-    println!("cargo:rerun-if-changed=build.rs"); // Inform Cargo to rerun the build script if build.rs is changed.
-    println!("cargo:rerun-if-env-changed=TEST_FOO"); // Inform Cargo to rerun the build script if TEST_FOO is changed.
+    // In tests7, we should set up an environment variable
+    // called `TEST_FOO`. Print in the standard output to let
+    // Cargo do it.-s
 
-    // Use the current timestamp to set the environment variable `TEST_FOO`.
     let timestamp = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
         .unwrap()
         .as_secs();
-    std::env::set_var("TEST_FOO", timestamp.to_string());
+    
+    // Set up the environment variable "TEST_FOO" with a value.
+    let your_command = format!("cargo:rustc-env=TEST_FOO={}", timestamp.to_string());
+    // let your_command = format!("TEST_FOO={}", timestamp.to_string());
+    println!("{}", your_command);
 
-    // In tests8, enable the "pass" feature.
-    println!("cargo:rerun-if-changed=build.rs"); // Inform Cargo to rerun the build script if build.rs is changed.
-    let your_command = "pass";
-    println!("cargo:{}", your_command);
+    // In tests8, we should enable "pass" feature to make the
+    // testcase return early. Fill in the command to tell
+    // Cargo about that.
+    let your_command = "cargo:rustc-cfg=feature=\"pass\"";
+    println!("{}", your_command);
 }
+
+
+
+
+
+
+
+
